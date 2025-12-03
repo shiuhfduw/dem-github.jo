@@ -2,13 +2,20 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поздравление 2026</title>
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="fetch" href="crossword-ru.json" crossorigin>
+    <link rel="preload" as="fetch" href="crossword-en.json" crossorigin>
 </head>
 <body>
+    <p><a href="index.html">← Назад</a></p>
     <p>Приближается один из любимых праздников в России — Новый год!</p>
     <p>Это время волшебства, тёплых встреч, мандаринов и исполнения самых заветных желаний. В ожидании праздника так приятно заняться чем-то увлекательным и полезным — например, разгадыванием кроссвордов.</p>
     <p>Для ценителей родного языка я подготовила русский кроссворд с тематическими словами: «Дед Мороз», «Снегурочка», «ёлка», «хлопушка» и другие атрибуты новогоднего настроения. А тем, кто хочет совместить праздничное настроение с практикой иностранного языка, подойдёт английский кроссворд, где вы встретите слова вроде snowflake, fireworks, gift и celebration.</p>
     <p>Разгадывайте, угадывайте, улыбайтесь — и пусть Новый год принесёт вам радость, вдохновение и успехи в учёбе и работе!</p>
+    <div id="crossword-ru-container"></div>
+    <div id="crossword-en-container"></div>
+    <script src="crossword-loader.js" defer></script>
 </body>
 </html>
