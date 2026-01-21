@@ -5,113 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой блог — shiuhfduw.github.io</title>
   <style>
-    /* ГЛАВНЫЙ ФОН — тёмный + узор (если нужно) */
+    /* Глобальные стили — всё белое на тёмном фоне */
     body {
+      background: url('Icons/icons8.png') repeat;
       background-color: #0f0c29;
-      /* Убран background-image — он мешал читаемости */
-      color: #ffffff;
+      color: #ffffff; /* Основной цвет текста — белый */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 20px;
       line-height: 1.6;
     }
 
+    /* Контейнер */
     .container {
       max-width: 800px;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.75);
       padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
-      color: #ffffff;
-      border: 1px solid #333;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      color: #ffffff; /* На всякий случай — внутри тоже белый */
     }
 
+    /* Заголовки */
     h1 {
       text-align: center;
       color: #ffcc00;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
     h2 {
       color: #4dffcc;
       border-bottom: 1px solid #444;
       padding-bottom: 4px;
       margin-top: 30px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     h3 {
       color: #ff9966;
       margin-top: 20px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
+    /* Изображения */
     img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
       margin: 15px 0;
       display: block;
-      border: 2px solid #4dffcc;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
+    /* Ссылки */
     a {
       color: #ff9966;
       text-decoration: none;
-      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
-      color: #ffcc00;
     }
 
+    /* Код */
     code {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
       padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
-      color: #ffffff;
-      border: 1px solid #555;
+      color: #ffffff; /* Код — тоже белый */
     }
 
+    /* Блок с ключом */
     .key-info {
-      background: rgba(30, 30, 50, 0.7);
+      background: rgba(30, 30, 50, 0.6);
       padding: 15px;
-      border-left: 4px solid #4dffcc;
+      border-left: 3px solid #4dffcc;
       margin: 15px 0;
       border-radius: 8px;
       color: #ffffff;
     }
 
+    /* Списки — явно задаём цвет */
     ul, ol {
       color: #ffffff;
-      padding-left: 20px;
     }
     li {
       margin-bottom: 8px;
     }
 
+    /* Примечания */
     .note, p.note {
       font-style: italic;
-      color: #cccccc;
+      color: #cccccc; /* Чуть светлее серый, но не чёрный */
       margin-top: 10px;
-      background: rgba(255,255,255,0.05);
-      padding: 8px;
-      border-radius: 4px;
     }
 
+    /* Убедимся, что абзацы белые */
     p {
       color: #ffffff;
-      margin: 10px 0;
-    }
-
-    blockquote {
-      color: #ffcc00;
-      font-style: italic;
-      border-left: 3px solid #4dffcc;
-      padding-left: 15px;
-      margin: 15px 0;
     }
   </style>
 </head>
@@ -122,11 +109,11 @@
     <!-- ССЫЛКА НА ПОЧТУ -->
     <p><a href="mailto:annaschegl24@gmail.com">📧 Напишите мне</a></p>
 
-    <!-- Картинка: шампанское с Icons8 -->
-    <img src="https://img.icons8.com/fluency/96/champagne-bottle.png" alt="Бутылка шампанского">
+    <!-- Картинка -->
+    <img src="Icons/icons8.png" alt="Иконка фона">
 
     <!-- =============== НОВАЯ ЗАПИСЬ: КЛЮЧ 700 =============== -->
-    <h2>21 января, 2026</h2>
+    <h2>20 января, 2026</h2>
     <h3>Ключ: 700 (в десятичной системе)</h3>
     <div class="key-info">
       <p>Исходный ключ: <strong>700</strong></p>
@@ -173,23 +160,22 @@
     <p>Название репозитория — <code>dem-github.jo</code> — является лишь именем проекта и <strong>не влияет на доменное имя</strong>.</p>
 
     <!-- Старые записи -->
+    <h2>15 декабря, 2025</h2>
+    <p><strong>Поздравляю с наступающим Рождеством 2026!</strong><br>
+    С теплом и радостью делюсь с вами традиционной колядкой.</p>
+    <p>Посмотрите праздничное видео: <a href="#">Видео с колядкой</a><br>
+    Скачайте документ с колядкой: <a href="kolyadka.pdf">kolyadka.pdf</a></p>
 
     <h2>3 декабря, 2025</h2>
     <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
 
     <h2>15 октября, 2025</h2>
-    <p>
-      Я сделала Новогодние кроссворды для сайта <a href="http://адрес-сайта-друга" title="Блог моего друга">Сайт моего друга</a>.
-    </p>
+    <p>Я сделала Новогоднюю Сайт моего друга.</p>
 
     <h2>1 сентября, 2025</h2>
-    <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
-    <p>
-      Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.
-    </p>
+    <p><strong>Путешествие шаг за шагом (Лао Цзы)</strong><br>
+    ... продолжение текста ...</p>
 
-    <!-- Иконки -->
-    <p>Иконки: <a target="_blank" href="https://icons8.com/icon/54109/champagne-bottle">Новый год</a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a></p>
   </div>
 </body>
 </html>
