@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой блог — shiuhfduw.github.io</title>
   <style>
+    /* Глобальные стили — всё белое на тёмном фоне */
     body {
       background: url('Icons/icons8.png') repeat;
       background-color: #0f0c29;
-      color: #ffffff;
+      color: #ffffff; /* Основной цвет текста — белый */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 20px;
       line-height: 1.6;
     }
+
+    /* Контейнер */
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -21,7 +24,10 @@
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      color: #ffffff; /* На всякий случай — внутри тоже белый */
     }
+
+    /* Заголовки */
     h1 {
       text-align: center;
       color: #ffcc00;
@@ -37,6 +43,8 @@
       color: #ff9966;
       margin-top: 20px;
     }
+
+    /* Изображения */
     img {
       max-width: 100%;
       height: auto;
@@ -44,6 +52,8 @@
       margin: 15px 0;
       display: block;
     }
+
+    /* Ссылки */
     a {
       color: #ff9966;
       text-decoration: none;
@@ -51,24 +61,44 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Код */
     code {
       background: rgba(255, 255, 255, 0.15);
       padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
+      color: #ffffff; /* Код — тоже белый */
     }
+
+    /* Блок с ключом */
     .key-info {
       background: rgba(30, 30, 50, 0.6);
       padding: 15px;
       border-left: 3px solid #4dffcc;
       margin: 15px 0;
       border-radius: 8px;
+      color: #ffffff;
     }
-    .key-info ul {
-      margin: 10px 0;
+
+    /* Списки — явно задаём цвет */
+    ul, ol {
+      color: #ffffff;
     }
-    .key-info li {
+    li {
       margin-bottom: 8px;
+    }
+
+    /* Примечания */
+    .note, p.note {
+      font-style: italic;
+      color: #cccccc; /* Чуть светлее серый, но не чёрный */
+      margin-top: 10px;
+    }
+
+    /* Убедимся, что абзацы белые */
+    p {
+      color: #ffffff;
     }
   </style>
 </head>
@@ -145,7 +175,6 @@
     <h2>1 сентября, 2025</h2>
     <p><strong>Путешествие шаг за шагом (Лао Цзы)</strong><br>
     ... продолжение текста ...</p>
-    <!-- Удалён незакрытый <img -->
 
   </div>
 </body>
