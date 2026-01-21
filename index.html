@@ -117,24 +117,80 @@
 
     <!-- =============== НОВАЯ ЗАПИСЬ: КЛЮЧ 700 =============== -->
     <h2>21 января, 2026</h2>
-    <h3>Ключ: 700 (в десятичной системе)</h3>
-    <div class="key-info">
-      <p>Исходный ключ: <strong>700</strong></p>
-      
-      <p>Для шифра Цезаря эффективный сдвиг определяется по модулю длины алфавита:</p>
-      
-      <ul>
-        <li><strong>Английский алфавит</strong> (26 букв):<br>
-            700 mod 26 = <strong>24</strong></li>
-        
-        <li><strong>Русский алфавит</strong> (33 буквы, без «ё»):<br>
-            700 mod 33 = <strong>7</strong></li>
-      </ul>
+   <!-- RSA Учебный виджет -->
+<div id="rsa-demo-widget" style="font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h2 style="color: #2c3e50; margin-top: 0;">🔐 Учебный пример RSA</h2>
+  
+  <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px;">
+    <p class="zz"><b>Ключи (на основе p=5, q=11):</b></p>
+    <p>Открытый: <code>(n=55, e=3)</code> | Закрытый: <code>(n=55, d=27)</code>
+  </div>
 
-      <p class="note">Таким образом, при шифровании:<br>
-        — на английском используйте сдвиг <code>K = 24</code>,<br>
-        — на русском — сдвиг <code>K = 7</code>.</p>
-    </div>
+  <div>
+    <label for="rsa-message">Введите сообщение (целое число от 1 до 54):</label><br>
+    <input type="number" id="rsa-message" min="1" max="54" value="7" style="padding: 6px; margin: 5px 5px 10px 0; width: 100px;">
+    <button onclick="runRSA()">Зашифровать и расшифровать</button>
+  </div>
+
+  <div id="rsa-result" style="margin-top: 15px; padding: 10px; background: white; border-radius: 6px; min-height: 20px;"></div>
+</div>
+
+<script>
+  // Только если функции ещё не определены — избегаем конфликтов
+  if (typeof window.runRSA === 'undefined') {
+    function modExp(base, exp, mod) {
+      let result = 1;
+      base = base % mod;
+      while (exp > 0) {
+        if (exp % 2 === 1) result = (result * base) % mod;
+        exp = Math.floor(exp / 2);
+        base = (base * base) % mod;
+      }
+      return result;
+    }
+
+    function gcd(a, b) {
+      while (b !== 0) [a, b] = [b, a % b];
+      return a;
+    }
+
+    window.runRSA = function() {
+      const input = document.getElementById('rsa-message');
+      const output = document.getElementById('rsa-result');
+      const m = parseInt(input.value, 10);
+      const n = 55, e = 3, d = 27;
+
+      if (isNaN(m)  m <= 0  m >= n) {
+        output.innerHTML = '<span style="color: #e74c3c;">Ошибка: введите число от 1 до 54.</span>';
+        return;
+      }
+
+      const C = modExp(m, e, n);
+      const M = modExp(C, d, n);
+
+      let msg = <b>Исходное:</b> ${m} → <b>Шифротекст:</b> ${C} → <b>Расшифровка:</b> ${M};
+      if (M === m) {
+        msg += ' ✅';
+        output.style.color = '#27ae60';
+      } else {
+        msg += ' ❌ (ошибка — убедитесь, что НОД(m,55)=1)';
+        output.style.color = '#e74c3c';
+      }
+      output.innerHTML = msg;
+    };
+
+    // Запуск при загрузке виджета
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('rsa-message')) runRSA();
+    });
+  }
+</script>
+
+<!-- Красивая надпись -->
+<div class="magic-text">
+  Секреты шифруются сердцем ❤️<br>
+  А расшифровываются — доверием 🔐
+</div>
 
     <!-- Предыдущая запись -->
     <h2>17 января, 2026</h2>
